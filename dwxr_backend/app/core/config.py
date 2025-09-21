@@ -1,6 +1,6 @@
 import secrets
 import warnings
-from typing import Annotated, Any, Literal
+from typing import Annotated, Any, Literal, Union
 
 from pydantic import (
     AnyUrl,
@@ -84,6 +84,27 @@ class Settings(BaseSettings):
         return self
 
     EMAIL_RESET_TOKEN_EXPIRE_HOURS: int = 48
+
+    # 抖音小程序配置
+    DOUYIN_APP_ID: str = "your_douyin_app_id"
+    DOUYIN_APP_SECRET: str = "your_douyin_app_secret" 
+    DOUYIN_AUTH_URL: str = "https://developer.toutiao.com/api/apps/v2/jscode2session"
+    
+    # JWT和会话配置
+    JWT_ALGORITHM: str = "HS256"
+    JWT_EXPIRE_MINUTES: int = 120  # 2小时
+    SESSION_EXPIRE_SECONDS: int = 7200  # 2小时
+    USER_ACTIVE_EXPIRE_SECONDS: int = 1800  # 30分钟
+    
+    # Redis配置
+    REDIS_HOST: str = "localhost"
+    REDIS_PORT: int = 6379
+    REDIS_DB: int = 0
+    REDIS_PASSWORD: Union[str, None] = None
+    
+    # 安全配置
+    LOGIN_RATE_LIMIT: int = 10  # 每小时最大登录次数
+    RATE_LIMIT_WINDOW: int = 3600  # 1小时
 
     @computed_field  # type: ignore[prop-decorator]
     @property
