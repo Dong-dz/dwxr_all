@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tab-bar": "../../components/tab-bar/index",
+    "order-card": "../../components/order-card/order-card"
+  },
+  "navigationBarTitleText": "消息"
+}

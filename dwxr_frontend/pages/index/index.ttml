@@ -1,0 +1,53 @@
+<!-- 地图 -->
+<view class="content-container" tt:if="{{showContent}}">
+  <map id="myMap" style="width: 100%; height: 100%;" latitude="{{latitude}}" longitude="{{longitude}}" scale="{{scale}}"
+    rotate="{{rotate}}" skew="{{skew}}" show-location="{{showLocation}}" include-points="{{includePoints}}"
+    show-compass="{{showCompass}}" enable-overlooking="{{enableOverlooking}}" enable-rotate="{{enableRotate}}"
+    show-scale="{{showScale}}" enable-zoom="{{enableZoom}}" enable-scroll="{{enableScroll}}"
+    enable-satellite="{{enableSatellite}}" enable-poi="{{enablePoi}}" enable-building="{{enableBuilding}}"
+    min-scale="{{minScale}}" max-scale="{{maxScale}}" markers="{{markers}}" bindtap="handleMapTap"
+    bindmarkertap="handleMarkerTap"></map>
+</view>
+
+<!-- 列表 -->
+<view class="content-container" tt:elif="{{!showContent}}">
+  <block tt:for="{{items}}" tt:for-index="index" tt:for-item="item">
+    <view class="list-item" bindtap="goDetail" data-id="{{item.id}}">
+      <image class="item-img" src="{{item.image}}" mode="aspectFill"></image>
+      <view class="item-info">
+        <text class="item-name">{{item.name}}</text>
+        <text class="item-price">¥{{item.price}}</text>
+      </view>
+    </view>
+  </block>
+
+  <view class="loading" tt:if="{{loading}}">加载中...</view>
+  <view class="empty" tt:if="{{!loading && items.length === 0}}">暂无数据</view>
+</view>
+
+
+
+
+<!-- 切换按钮 -->
+<view class="toggle-button-container">
+  <button bindtap="toggleContent" class="toggle-button">
+    切换视图
+  </button>
+</view>
+
+
+
+
+<!-- <view class="toggle-button-container">
+  <button bindtap="toggleContent" class="toggle-button">
+    {{showContent === 'A' ? '切换到B' : '切换到A'}}
+  </button>
+</view> -->
+<!-- <view class="content-container">
+  <view tt:if="{{showContent === 'A'}}" class="content-a">
+    这是内容 A
+  </view>
+  <view tt:if="{{showContent === 'B'}}" class="content-b">
+    这是内容 B
+  </view>
+</view> -->

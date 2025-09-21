@@ -1,0 +1,82 @@
+.profile-bg {
+  width: 100vw;
+  height: 320rpx;
+  background: linear-gradient(180deg, #3a7afe 0%, #6ec6ff 100%);
+  border-bottom-left-radius: 32rpx;
+  border-bottom-right-radius: 32rpx;
+  position: relative;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 48rpx 32rpx 0 32rpx;
+}
+
+.profile-avatar {
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 56rpx;
+  border: 4rpx solid #fff;
+  background: #fff;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 32rpx;
+}
+
+.profile-nickname {
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-right: 24rpx;
+}
+
+.profile-login-btn,
+.profile-logout-btn {
+  height: 48rpx;
+  line-height: 48rpx;
+  padding: 0 32rpx;
+  font-size: 28rpx;
+  border-radius: 24rpx;
+  margin-right: 16rpx;
+  border: none;
+}
+
+.profile-login-btn {
+  background: #fff;
+  color: #3a7afe;
+}
+
+.profile-logout-btn {
+  background: #fff;
+  color: #999;
+}
+
+.profile-card {
+  width: 90vw;
+  margin: 32rpx auto 0 auto;
+  background: #fff;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(58,122,254,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32rpx 40rpx;
+  position: relative;
+  z-index: 2;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.profile-card view {
+  margin-bottom: 12rpx;
+}
+
+.profile-card view:last-child {
+  margin-bottom: 0;
+}

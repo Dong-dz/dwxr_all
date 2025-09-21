@@ -1,0 +1,39 @@
+page {
+  background: rgba(22, 24, 35, 0.03);
+  height: 100%;
+}
+
+.toggle-button-container {
+  position: fixed;
+  bottom: 40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.toggle-button {
+  background: linear-gradient(90deg, #085fd1, #00b3ff);
+  color: #FFFFFF;
+  border-radius: 50rpx;
+  padding: 16rpx 32rpx;
+  font-size: 28rpx;
+  box-shadow: 0 4rpx 12rpx rgba(255, 87, 34, 0.3);
+}
+
+.content-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.container-item {
+  margin-bottom: 20rpx;
+}

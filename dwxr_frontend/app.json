@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/category/category",
+    "pages/agent/agent",
+    "pages/login/login",
+    "ext://microapp-trade-plugin/order-confirm",
+    "ext://microapp-trade-plugin/refund-apply",
+    "ext://microapp-trade-plugin/refund-detail",
+    "pages/product-detail/product-detail",
+    "ext://microapp-trade-plugin/trade-order-detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "今日钓点",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#161823",
+    "selectedColor": "#085fd1",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "钓点",
+        "iconPath": "./assets/ditu0.png",
+        "selectedIconPath": "./assets/ditu1.png"
+      },
+      {
+        "pagePath": "pages/agent/agent",
+        "text": "智能体",
+        "iconPath": "./assets/xiaoxi0.png",
+        "selectedIconPath": "./assets/xiaoxi1.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "探索",
+        "iconPath": "./assets/paihangbang0.png",
+        "selectedIconPath": "./assets/paihangbang1.png"
+      },
+      {
+        "pagePath": "pages/login/login",
+        "text": "我的",
+        "iconPath": "./assets/tianxuangouren0.png",
+        "selectedIconPath": "./assets/tianxuangouren1.png"
+      }
+    ]
+  }
+}

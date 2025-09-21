@@ -1,0 +1,44 @@
+<!-- 用户 openid 和 unionid 信息展示卡片 -->
+<!-- <view class="profile-card">
+  <view>open_id：{{openid}}</view>
+  <view>union_id：{{unionid}}</view>
+</view> -->
+
+<!--
+  该页面为自定义登录页面的视图层，主要分为两部分：用户信息展示区和用户ID信息卡片区。
+
+  1. 外层 view（class="profile-bg"）为顶部背景区域，包含用户头像和昵称等信息。
+  2. profile-header 区域内，左侧为头像（image），右侧为昵称和登录/登出按钮。
+     - 头像：如果已登录且有 avatarUrl，则显示用户头像，否则显示默认头像。
+     - 昵称：已登录显示 nickName，未登录显示“未登录”。
+     - 登录按钮：未登录时显示，点击触发 onLoginTap，按钮会根据 loading 状态显示“登录中...”或“立即登录”，并可禁用。
+     - 退出登录按钮：已登录时显示，点击触发 onLogoutTap。
+  3. profile-card 区域展示 openid 和 unionid，分别为用户的唯一标识。
+-->
+
+<view class="profile-bg">
+  <view class="profile-header">
+    <!-- 用户头像：已登录且有头像时显示用户头像，否则显示默认头像 -->
+    <image class="profile-avatar" src="{{isLogin && avatarUrl ? avatarUrl : '../../assets/logog.png'}}">
+    </image>
+
+    <view class="profile-info">
+      <!-- 用户昵称：已登录显示昵称，未登录显示“” -->
+      <text class="profile-nickname">
+        {{isLogin ? username : ''}}
+      </text>
+
+      <!-- 登录按钮：未登录时显示，点击触发登录逻辑，loading 时按钮禁用并显示“登录中...” -->
+      <button class="profile-login-btn" tt:if="{{!isLogin}}" bindtap="onLoginTap" size="mini" type="primary"
+        loading="{{loading}}" disabled="{{loading}}">
+        {{loading ? '登录中...' : '立即登录'}}
+      </button>
+
+      <!-- 退出登录按钮：已登录时显示，点击触发登出逻辑 -->
+      <button class="profile-logout-btn" tt:if="{{isLogin}}" bindtap="onLogoutTap" size="mini" type="default">
+        退出登录
+      </button>
+    </view>
+
+  </view>
+</view>
